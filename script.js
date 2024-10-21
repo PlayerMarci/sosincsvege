@@ -8,29 +8,28 @@ function CurrentDate(){
     let currentDate = new Date();
     let datetime = `${currentDate.getUTCFullYear()}-${currentDate.getUTCMonth() + 1}-${currentDate.getDate()} ${currentDate.getUTCHours() + 2}:${currentDate.getUTCMinutes()}:${currentDate.getUTCSeconds()}`;
     currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds());
-    
-    /*
-    let timeToTheEnd = Math.abs(theEnd - currentDate);
-
-    console.log(timeToTheEnd);
-
-    let backtodate;
+    let timeToTheEnd = Math.abs(theEnd.getTime() - currentDate.getTime());
+    let backtodate = new Date();
     backtodate.setTime(timeToTheEnd);
+    let text = `${1970 - backtodate.getFullYear()}-${backtodate.getUTCMonth() + 1}-${backtodate.getDate()} ${backtodate.getUTCHours()}:${backtodate.getUTCMinutes()}:${backtodate.getUTCSeconds()}`;
 
-    console.log(backtodate);
-*/
 
-    DomElementCreate(datetime);
+    DomElementCreate(datetime, text);
     setTimeout(DomElementRemove, 1000, datetime);
     if (`${currentDate}` == `${vege_test}`){
         //console.log("YAY");
     }
 }
 
-function DomElementCreate(datetime){
+function DomElementCreate(datetime, text){
     let h2 = document.createElement("h2");
-    h2.innerText = datetime;
+    h2.innerText = `Jelenlegi idő: ${datetime}`;
     h2.id = datetime;
+
+    let div = document.createElement("div");
+    div.innerText = `Hátralévő idő: ${text}`;
+
+    h2.appendChild(div);
     ancestor.appendChild(h2);
 }
 
