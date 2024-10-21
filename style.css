@@ -6,9 +6,12 @@ h1 {
 }
 
 body{
+    height: 100wh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     background-color: black;
     color: aliceblue;
-    
 }
 
 h2{
@@ -21,4 +24,11 @@ div{
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
+}
+
+canvas {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
 }
