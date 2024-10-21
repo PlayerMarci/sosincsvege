@@ -1,0 +1,10 @@
+h1 {
+    color: blue;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+body{
+    background-color: black;
+    color: aliceblue;
+}
