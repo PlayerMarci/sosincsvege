@@ -1,6 +1,4 @@
 const theEnd = new Date(2025, 6 - 1, 13, 0, 0, 0);
-const vege_test = new Date(2024, 10 - 1, 21);
-
 const ancestor = document.getElementById("currentDate");
 
 
@@ -11,7 +9,7 @@ function CurrentDate() {
     let timeToTheEnd = Math.abs(theEnd.getTime() - currentDate.getTime());
     let backtodate = new Date();
     backtodate.setTime(timeToTheEnd);
-    let text = `${1970 - backtodate.getFullYear()}-${backtodate.getUTCMonth() + 1}-${backtodate.getDate()} ${backtodate.getUTCHours()}:${backtodate.getUTCMinutes()}:${backtodate.getUTCSeconds()}`;
+    let text = `${1970 - backtodate.getFullYear()}-${backtodate.getUTCMonth()}-${backtodate.getDate() - 1} ${backtodate.getUTCHours()}:${backtodate.getUTCMinutes()}:${backtodate.getUTCSeconds()}`;
 
 
     DomElementCreate(datetime, text);
